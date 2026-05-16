@@ -1,0 +1,46 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Встановити залежності",
+            "type": "shell",
+            "command": "pip install -r requirements.txt",
+            "problemMatcher": [],
+            "group": "build"
+        },
+        {
+            "label": "Запустити Flask",
+            "type": "shell",
+            "command": "python app.py",
+            "problemMatcher": [],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Запустити всі тести",
+            "type": "shell",
+            "command": "pytest -v",
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Очистити БД (видалити bookings.db)",
+            "type": "shell",
+            "command": "rm -f bookings.db",
+            "windows": {
+                "command": "del bookings.db"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

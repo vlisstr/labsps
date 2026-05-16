@@ -1,0 +1,67 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Запустити Flask (app.py)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/app.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "FLASK_DEBUG": "1"
+            }
+        },
+        {
+            "name": "Запустити Flask (через flask run)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "flask",
+            "console": "integratedTerminal",
+            "env": {
+                "FLASK_APP": "app.py",
+                "FLASK_DEBUG": "1"
+            },
+            "args": [
+                "run",
+                "--no-debugger"
+            ],
+            "jinja": true
+        },
+        {
+            "name": "Запустити всі тести (pytest)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "-v"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Тільки unit-тести",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "-v",
+                "tests/test_unit.py"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        },
+        {
+            "name": "Тільки integration-тести",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "pytest",
+            "args": [
+                "-v",
+                "tests/test_integration.py"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false
+        }
+    ]
+}
